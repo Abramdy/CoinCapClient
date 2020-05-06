@@ -111,4 +111,14 @@ public class BookmarkService {
         log.warn("Currency bookmark not found by Id.");
         return false;
     }
+
+    /**
+     * Метод isExistByName.
+     * Проверка существования закладки по имени.
+     * @param bookmarkName имя закладки.
+     * @return true - если закладка существуеты
+     */
+    public boolean isExistByName(String bookmarkName) {
+        return bookmarkRepository.findByCurrencyName(bookmarkName).isPresent();
+    }
 }

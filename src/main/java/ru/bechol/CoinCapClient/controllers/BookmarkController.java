@@ -58,8 +58,8 @@ public class BookmarkController {
      * @request POST http://localhost:8080/api/v1/bookmarks/create
      */
     @PostMapping("/create")
-    public ResponseEntity<Boolean> createNewBookMark(@RequestParam String newCurrencyBookmarkName) {
-        if (bookmarkService.findCurrencyBookmarkByName(newCurrencyBookmarkName) != null) {
+    public ResponseEntity<Boolean> createNewBookMark(@RequestParam("bookmark") String newCurrencyBookmarkName) {
+        if (bookmarkService.isExistByName(newCurrencyBookmarkName)) {
             return ResponseEntity.badRequest().build();
         }
         bookmarkService.addNewCurrencyBookmark(newCurrencyBookmarkName);
@@ -77,7 +77,7 @@ public class BookmarkController {
      */
     @PutMapping("/update/{id}")
     public ResponseEntity<Boolean> updateCurrencyBookmark(
-            @PathVariable Long id, @RequestParam String newCurrencyBookmarkName) {
+            @PathVariable Long id, @RequestParam("bookmark") String newCurrencyBookmarkName) {
         return bookmarkService.updateBookMark(id, newCurrencyBookmarkName) ?
                 ResponseEntity.ok(true) : ResponseEntity.notFound().build();
     }
