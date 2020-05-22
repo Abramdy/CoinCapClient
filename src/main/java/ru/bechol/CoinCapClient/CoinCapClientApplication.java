@@ -2,9 +2,10 @@ package ru.bechol.CoinCapClient;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
 
 @SpringBootApplication
-public class CoinCapClientApplication {
+public class CoinCapClientApplication extends SpringBootServletInitializer {
 
 	public static void main(String[] args) {
 		SpringApplication.run(CoinCapClientApplication.class, args);
