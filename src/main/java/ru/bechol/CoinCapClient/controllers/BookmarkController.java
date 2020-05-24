@@ -16,7 +16,7 @@ import java.util.List;
  * @email oleg071984@gmail.com
  */
 @RestController
-@RequestMapping("/api/v1/bookmarks")
+@RequestMapping("/api/v1/bookmark")
 public class BookmarkController {
 
     @Autowired
