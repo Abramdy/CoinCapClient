@@ -72,7 +72,7 @@
     </dependencies>
 
     <build>
-        <finalName>${project.artifactId}</finalName>
+        <finalName>${project.artifactId}</finalName> <!-- tomcat чувствителен к регистру-->
         <plugins>
             <plugin>
                 <groupId>org.springframework.boot</groupId>
